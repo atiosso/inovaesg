@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 export default function DateComponent({
   dateString,
@@ -11,7 +12,7 @@ export default function DateComponent({
 
   return (
     <time dateTime={dateString}>
-      {format(new Date(dateString), "LLLL	d, yyyy")}
+      {format(new Date(dateString), "dd 'de' LLLL 'de' yyyy", { locale: ptBR })}
     </time>
   );
 }
