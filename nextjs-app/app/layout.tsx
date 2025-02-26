@@ -10,7 +10,7 @@ import { Toaster } from "sonner";
 import DraftModeToast from "@/app/components/DraftModeToast";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
-import * as demo from "@/sanity/lib/demo";
+import * as demo from "@/sanity/lib/fallback";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
