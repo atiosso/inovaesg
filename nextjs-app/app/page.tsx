@@ -1,8 +1,19 @@
 import { Suspense } from "react";
 
 import { AllPosts } from "@/app/components/Posts";
+import { sanityFetch } from "@/sanity/lib/live";
+import { settingsQuery } from "@/sanity/lib/queries";
+import { toPlainText } from "next-sanity";
+
+import * as fallback from "@/sanity/lib/fallback";
 
 export default async function Page() {
+  const { data: settings } = await sanityFetch({
+    query: settingsQuery,
+    // Metadata should never contain stega
+    stega: false,
+  });
+
   return (
     <>
       <div className="bg-gradient-to-l from-brand-300 from-0% via-white via-40%  relative">
@@ -19,9 +30,7 @@ export default async function Page() {
             </div>
             <div className="mt-6 space-y-6 prose sm:prose-lg md:prose-xl lg:prose-2xl text-gray-700">
               <p>
-                Aqui você encontra insights e soluções voltadas a transformar a
-                forma como as empresas integram critérios ambientais, sociais de
-                governança em suas estratégias de negócio.
+                {toPlainText(settings?.description || fallback.description)}
               </p>
             </div>
           </div>
