@@ -1,4 +1,4 @@
-export default function BaseLogo() {
+export default function SimpleLogo() {
   return (
     <svg
       id="Layer_2"

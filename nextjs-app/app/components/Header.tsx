@@ -1,13 +1,13 @@
 import Link from "next/link";
-import BaseLogo from "./Logo/BaseLogo";
+import FilledSimpleLogo from "./Logo/FilledSimpleLogo";
 import SimpleLogo from "./Logo/SimpleLogo";
-
+import BaseLogo from "./Logo/BaseLogo";
 export default function Header() {
   return (
     <header className="fixed z-50 h-24 inset-0 bg-white/80 flex items-center backdrop-blur-lg">
       <div className="container py-6 sm:px-6">
         <div className="flex items-center justify-between gap-5">
-          <Link className="flex items-center gap-2 h-24 w-24" href="/">
+          <Link className="flex items-center gap-2 h-16 w-16" href="/">
             <SimpleLogo />
           </Link>
 

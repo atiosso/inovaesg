@@ -1,8 +1,6 @@
 export default function BaseLogo() {
   return (
     <svg
-      id="Layer_2"
-      data-name="Layer 2"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 339.12 194.75"
       className="text-brand-600"

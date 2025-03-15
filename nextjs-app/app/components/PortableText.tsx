@@ -31,7 +31,7 @@ export default function CustomPortableText({
           {children}
           <a
             href={`#${value?._key}`}
-            className="absolute left-0 top-0 bottom-0 -ml-6 flex items-center opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute left-0 top-0 bottom-0 -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity p-2 rounded-full bg-brand-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ export default function CustomPortableText({
             {children}
             <a
               href={`#${value?._key}`}
-              className="absolute left-0 top-0 bottom-0 -ml-6 flex items-center opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-0 top-0 bottom-0 -ml-10 flex items-center opacity-0 group-hover:opacity-100 transition-opacity p-2 rounded-full bg-brand-50"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default function CustomPortableText({
 
   return (
     <div
-      className={["prose prose-a:text-red-500", className]
+      className={["prose prose-a:text-brand-600", className]
         .filter(Boolean)
         .join(" ")}
     >

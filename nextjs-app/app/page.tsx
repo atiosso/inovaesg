@@ -6,6 +6,7 @@ import { settingsQuery } from "@/sanity/lib/queries";
 import { toPlainText } from "next-sanity";
 
 import * as fallback from "@/sanity/lib/fallback";
+import BaseLogo from "./components/Logo/BaseLogo";
 
 export default async function Page() {
   const { data: settings } = await sanityFetch({
@@ -16,17 +17,15 @@ export default async function Page() {
 
   return (
     <>
-      <div className="bg-gradient-to-l from-brand-300 from-0% via-white via-40%  relative">
+      <div className="bg-gradient-to-r from-brand-200 from-0% via-white via-40%  relative">
         <div className="bg-gradient-to-b from-white w-full h-40 absolute top-0"></div>
         <div className="bg-gradient-to-t from-white w-full h-40 absolute bottom-0"></div>
         <div className="container relative">
           <div className="mx-auto max-w-2xl py-20 lg:max-w-4xl lg:px-12 text-center">
             <div className="flex flex-col gap-4 items-center">
-              <h1 className="font-logo text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter">
-                <span className="text-black">i</span>
-                <span className="text-black">nova</span>{" "}
-                <span className="text-black font-light">ESG</span>
-              </h1>
+              <div className="w-72">
+                <BaseLogo />
+              </div>
             </div>
             <div className="mt-6 space-y-6 prose sm:prose-lg md:prose-xl lg:prose-2xl text-gray-700">
               <p>
