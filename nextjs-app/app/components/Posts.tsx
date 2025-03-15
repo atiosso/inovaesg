@@ -8,6 +8,7 @@ import OnBoarding from "@/app/components/Onboarding";
 import { Image } from "next-sanity/image";
 import { stegaClean } from "next-sanity";
 import { urlForImage } from "@/sanity/lib/utils";
+import EmptyState from "./EmptyState";
 
 const PostThumbnail = ({
   coverImage,
@@ -50,7 +51,7 @@ const Post = ({ post }: { post: PostType }) => {
       </div>
       <h3 className="mt-3 text-2xl font-semibold">
         <Link
-          className="hover:text-red-500 underline transition-colors"
+          className="hover:text-brand-500 underline transition-colors"
           href={`/posts/${slug}`}
         >
           {title}
@@ -114,7 +115,12 @@ export const AllPosts = async () => {
   const { data } = await sanityFetch({ query: allPostsQuery });
 
   if (!data || data.length === 0) {
-    return <OnBoarding />;
+    return (
+      <EmptyState
+        title="Ainda não temos nenhuma postagem"
+        description="Volte logo e fique por dentro das novidades em ESG e inovação sustentável."
+      />
+    );
   }
 
   return (

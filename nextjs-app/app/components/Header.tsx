@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Logo } from "./Logo";
+import BaseLogo from "./Logo/BaseLogo";
+import SimpleLogo from "./Logo/SimpleLogo";
 
 export default function Header() {
   return (
@@ -7,7 +8,7 @@ export default function Header() {
       <div className="container py-6 sm:px-6">
         <div className="flex items-center justify-between gap-5">
           <Link className="flex items-center gap-2 h-24 w-24" href="/">
-            <Logo />
+            <SimpleLogo />
           </Link>
 
           <nav className="">
@@ -18,7 +19,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/courses"
-                  className="hover:text-pesto-700 transition-colors duration-200"
+                  className="hover:text-brand-700 transition-colors duration-200"
                 >
                   Cursos e Treinamentos
                 </Link>
@@ -26,7 +27,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-pesto-00 transition-colors duration-200"
+                  className="hover:text-brand-700 transition-colors duration-200"
                 >
                   Sobre
                 </Link>

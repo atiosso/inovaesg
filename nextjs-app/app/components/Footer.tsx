@@ -10,7 +10,7 @@ export default function Footer() {
             Fale conosco <br />
             <a
               href="mailto:contato@inovaesg.com"
-              className="hover:text-pesto-700 transition-colors duration-200 underline"
+              className="hover:text-brand-700 transition-colors duration-200 underline"
             >
               contato@inovaesg.com
             </a>

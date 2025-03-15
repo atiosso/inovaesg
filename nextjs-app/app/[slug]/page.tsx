@@ -5,7 +5,8 @@ import PageBuilderPage from "@/app/components/PageBuilder";
 import { sanityFetch } from "@/sanity/lib/live";
 import { getPageQuery, pagesSlugs } from "@/sanity/lib/queries";
 import { GetPageQueryResult } from "@/sanity.types";
-import { PageOnboarding } from "@/app/components/Onboarding";
+import EmptyState from "../components/EmptyState";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -53,7 +54,19 @@ export default async function Page(props: Props) {
   if (!page?._id) {
     return (
       <div className="py-40">
-        <PageOnboarding />
+        <EmptyState
+          title="Página não encontrada"
+          description="A página que você está procurando não existe."
+        >
+          <div className="flex justify-center w-full">
+            <Link
+              className="rounded-full gap-2 items-center bg-white text-brand-700 hover:bg-brand-100 focus:bg-brand-200 py-3 px-6 transition-colors duration-200"
+              href="/"
+            >
+              Voltar para a página inicial
+            </Link>
+          </div>
+        </EmptyState>
       </div>
     );
   }
